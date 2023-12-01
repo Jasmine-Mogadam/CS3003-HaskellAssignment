@@ -21,5 +21,5 @@ findFirst func list
 ------------------------------------------------
 palindrome :: [Char] -> Bool
 palindrome c
-    | head c == last c = palindrome (tail c)
-    | otherwise = False
+    | head c == last c = palindrome (init (tail c)) -- if the first and last are equal, continue with both removed
+    | otherwise = False -- if first and last are not equal, it is not a palindrome
